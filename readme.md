@@ -41,3 +41,55 @@ Por defecto el sistema configura un usuario en la db para usar el sistema
     "password": "123456"
 }
 ```
+
+# Pruebas con Postman
+
+Dentro de la carpeta ```./postman``` se encuentran archivos para importar y realizar las pruebas. Està la colecciòn y los entornos (local, vercel).
+
+# Endpoints
+
+- POST /auth/register
+```
+{
+    "email": "admin2@example.com",
+    "password": "123456"
+}
+```
+
+- POST /auth/login
+```
+{
+    "email": "admin2@example.com",
+    "password": "123456"
+}
+```
+
+- POST /api/products
+```
+{
+    "name" : "Nombre de producto",
+    "price" : "1234.22",
+    "sku": "1233123",
+    "description" : "Descripción",
+    "stock": 100,
+    "category": "Categoria"
+}
+```
+
+- GET /api/products
+
+- GET /api/products/:id
+
+- PUT /api/products/:id
+```
+{
+    "name" : "Nombre de producto",
+    "price" : "1234.22",
+    "sku": "1233123",
+    "description" : "Descripción",
+    "stock": 150,
+    "category": "Categoria"
+}
+```
+
+- DELETE /api/products/:id

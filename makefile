@@ -7,10 +7,6 @@ else
     DETECTED_OS := $(shell uname)
 endif
 
-build:
-	@echo "Building..."	
-	@npm run build
-
 # Run the application
 run:
 	@npm run start
@@ -45,4 +41,4 @@ else
 	@docker-compose down
 endif
 
-.PHONY: build run docker-build docker-run docker-down
+.PHONY: run docker-build docker-run docker-down
