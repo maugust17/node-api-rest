@@ -1,8 +1,8 @@
 import * as productsService from '../services/products.service.js';
 import { validationResult } from 'express-validator'
 
-export const getAllProducts = async (req, res) => {
-    res.status(200).json(await productsService.getAllProducts());
+export const getAllProducts = async (req, res) => {  
+    res.status(200).json(await productsService.getAllProducts(req.query));
 };
 
 export const getProductById = async (req, res) => {

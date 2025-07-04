@@ -1,11 +1,23 @@
 import { db } from '../database/data.js';
-import { collection, getDocs, doc, getDoc, addDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, addDoc, updateDoc, deleteDoc, query, where } from 'firebase/firestore';
 
 const productsCollection = collection(db, 'products');
 
 // Obtener todos los productos
-export const getAllProducts = async() => {
-    const snapshot = await getDocs(productsCollection);
+export const getAllProducts = async(params) => {
+
+    //Obtener los url params name, category, price
+
+    //recorrer los elemtnos de params y crear un array de condiciones
+    const conditions = [];
+    for (const [key, value] of Object.entries(params)) {
+        console.log(`key: ${key}, value: ${value}`);
+        conditions.push(where(key, '==', value));
+    }
+    console.log(conditions);
+    const q = query(productsCollection, ...conditions);
+
+    const snapshot = await getDocs(q);
     const products = snapshot.docs.map(doc => ({
         id: doc.id, ...doc.data()
     }));

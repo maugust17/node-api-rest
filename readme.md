@@ -78,6 +78,8 @@ Dentro de la carpeta ```./postman``` se encuentran archivos para importar y real
 
 - GET /api/products
 
+- GET /api/products?filter=value
+
 - GET /api/products/:id
 
 - PUT /api/products/:id

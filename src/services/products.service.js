@@ -1,7 +1,7 @@
 import * as productModel from '../model/products.model.js';
 
-export const getAllProducts = async () => {
-  return productModel.getAllProducts();
+export const getAllProducts = async (query) => {
+  return productModel.getAllProducts(query);
 };
 
 export const getProductById = async (id) => {

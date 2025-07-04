@@ -101,7 +101,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Nombre de producto\",\r\n    \"price\" : \"1234.22\",\r\n    \"sku\": \"1233123\",\r\n    \"description\" : \"Descripción\",\r\n    \"stock\": 100,\r\n    \"category\": \"Categoria\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Prueba\",\r\n    \"price\" : \"1234.22\",\r\n    \"sku\": \"1233123\",\r\n    \"description\" : \"Descripción\",\r\n    \"stock\": 100,\r\n    \"category\": \"Categoria\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -146,6 +146,40 @@
 					"path": [
 						"api",
 						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Products Filter",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/products?name=Prueba",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Prueba"
+						}
 					]
 				}
 			},
