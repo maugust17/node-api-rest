@@ -10,9 +10,26 @@ FIREBASE_STORAGE_BUCKET=TU_STORAGE_BUCKET
 FIREBASE_MESSAGING_SENDER_ID=TU_MESSAGING_SENDER_ID
 FIREBASE_APP_ID=TU_APP_ID
 FIREBASE_MEASUREMENT_ID=TU_MEASUREMENT_ID
+JWT_SECRET_KEY=CLAVE_PARA_ENCRIPTAR
 ```
 
 Reemplaza los valores de ejemplo por los datos correspondientes a tu proyecto de Firebase.
+
+# Ejecutar el proyecto
+
+Una vez configurado el entorno de trabajo es posible ejecutar la aplicaciòn de diferentes formas
+
+NPM
+- Con ```npm run start``` o ```npm run debug```
+
+Docker Compose
+ - Es necesario crear la imagen con el comando ```docker build -t node-api-rest .```
+ - Luego hay que ejecutar ```docker compose up --build```
+ - Para detener la aplicacion se ejecuta el comando ```docker compose up --build```
+
+Makefile
+- Para simplificar los comandos anteriores existe el archivo ```makefile```.
+- Los comandos son ```make run```, ```make docker-build```, ```make docker-run```, ```make docker-down```
 
 # Usuario por defecto
 
