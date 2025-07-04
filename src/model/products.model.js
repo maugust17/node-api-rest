@@ -37,7 +37,14 @@ export const deleteProduct = async(id) => {
 
 // Actualizar un producto
 export const updateProduct = async(id, product) => {
+
     const docRef = doc(productsCollection, id);
-    await updateDoc(docRef, product);
+    try {
+        await updateDoc(docRef, product);
+    }
+    catch (error) {
+        console.error("Error updating product: ", error);
+        return null;
+    }
     return { id: docRef.id, ...product };
 }
